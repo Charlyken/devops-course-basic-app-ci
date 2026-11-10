@@ -13,3 +13,15 @@ jobs:
       - name: List files in the repository
         run: ls ${{ github.workspace }}
       - run: 'echo "🍏 Statut du job : ${{ job.status }}."'
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository code
+        uses: actions/checkout@v4
+      - name: set uo python
+        uses: actions/setup-python@v5
+        with: 
+          python-version: '3.14.5'
+      - name: Display python-version
+        run: python -c "import sys; print(sys.version)"
