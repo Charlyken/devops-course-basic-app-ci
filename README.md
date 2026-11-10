@@ -1,4 +1,4 @@
-# AWS IP Lookup Application
+# AWS IP Lookup Application - CharlyKen
 
 ## How to Run
 
