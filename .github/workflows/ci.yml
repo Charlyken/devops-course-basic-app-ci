@@ -11,5 +11,5 @@ jobs:
       uses: actions/checkout@v4
       - run: echo "💡 Le repo ${{ github.repository }} a été cloné sur le runner."
       - name: List files in the repository
-      run: ls ${{ github.workspace }}
+        run: ls ${{ github.workspace }}
       - run: echo "🍏 Statut du job : ${{ job.status }}."
