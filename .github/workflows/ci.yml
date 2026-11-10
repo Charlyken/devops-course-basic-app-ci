@@ -19,15 +19,19 @@ jobs:
     steps:
       - name: checkout repository code
         uses: actions/checkout@v4
+
       - name: set uo python
         uses: actions/setup-python@v5
         with: 
           python-version: '3.14.5'
+
       - name: Display python-version
         run: python -c "import sys; print(sys.version)"
+
       - name: install dependencies
         run: pip install -r requirements.txt 
+
       - name: Test with pytest
         run: |
           pip install pytest pytest-cov 
-          pytest awsip_test.py  --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+          pytest test/awsip_test.py  --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
